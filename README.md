@@ -1,37 +1,57 @@
-## README text (fMRI-compatible + joystick/response box version AATEC)
+# AATEC_fMRI: Approach Avoidance Training vs Evaluative Conditioning 
 
-The experiment uses a within-subject design with one session to investigate participants’ choices. The study is **fMRI-compatible** and supports responses via **joysticks** and an **MRI response box**.
+**Author:** Anoushiravan Zahedi  
+**Repository:** [https://github.com/anoushzahedi/AATEC](https://github.com/anoushzahedi/AATEC_fMRI)
 
-# Overview
-The behavioral measurement contains three parts:
+## Overview
+AATEC is a MATLAB-based experimental suite developed using **Psychtoolbox-3**. It utilizes a within-subject design to investigate decision-making, preference formation, and attentional biases. 
 
-## Part 1: Preference and Choice
-Two tasks are administered:
+This version is specifically optimized for **fMRI environments**, supporting synchronized timing and specialized input hardware including **joysticks** and **MRI-compatible response boxes**.
 
-1. **Willingness to Pay (WTP)**
-   Participants see pictures of toys one by one and indicate how much they are willing to pay for the presented toy on a continuous scale.
+---
 
-2. **Binary Choice Task**
-   Pictures of toys are shown one by one, and participants choose whether they want to have the presented toy.
+## Experimental Structure
 
-## Part 2: Attentional Tasks
-Participants complete attentional tasks in which they respond to toys based on instructions. There are two tasks:
+The behavioral measurement is divided into three distinct phases:
 
-1. **Approach/Avoid Task (Sound-Cued)**
-   Participants must approach or avoid shown toys based on a presented sound (e.g., high vs. low pitch).
+### Phase 1: Baseline Preference & Choice
+1. **Willingness to Pay (WTP)**: Participants evaluate toy images individually and indicate their valuation on a continuous scale.
+2. **Binary Choice Task**: Participants perform a simple "Yes/No" choice for each presented item to establish baseline preference.
 
-2. **Emotion Categorization Task**
-   Participants categorize emotional pictures as quickly as possible.
+### Phase 2: Attentional & Affective Training
+1. **Approach/Avoid Task (Sound-Cued)**: A sensorimotor task where participants must approach or avoid toys based on auditory cues (e.g., high vs. low pitch).
+2. **Emotion Categorization Task**: A speeded task requiring participants to categorize emotional stimuli, used to measure affective processing speed and bias.
 
-## Part 3: Post-Training Preference and Competitive Choice
-Participants complete:
+### Phase 3: Post-Training Evaluation
+1. **Willingness to Pay (WTP)**: Re-evaluation of items to measure valuation shifts.
+2. **Binary Choice Task**: Re-evaluation of choice consistency.
+3. **Competitive Choice Task**: A forced-choice paradigm where two options are presented simultaneously, and participants must select their preferred item.
 
-1. **Willingness to Pay (WTP)** (same as Part 1)
-2. **Binary Choice Task** (same as Part 1)
-3. **Competitive Choice Task**
-   Two options are presented, and participants can choose only one.
+---
 
-### Important Notes
-- **PLEASE BE AWARE:** The study contains several attention checks and attention tasks.
-- **PLEASE BE AWARE:** During the experiment, you cannot be unresponsive for more than **3 minutes**. Otherwise, the tasks will end automatically.
-- Response collection is configured to work with **joysticks** and an **MRI response box** (fMRI-compatible input setup).
+## Technical Specifications & Compatibility
+
+### Hardware Support
+- **fMRI Compatible**: Designed for use in MRI environments with precise timing synchronization.
+- **Input Devices**: 
+  - Supports standard and MRI-compatible **Joysticks**.
+  - Supports **MRI Response Boxes** for binary and Likert-scale inputs.
+- **Software Requirements**: MATLAB with Psychtoolbox-3 installed.
+
+### Critical Constraints
+- **Attention Monitoring**: The study includes multiple embedded attention checks.
+- **Timeout Protocol**: To ensure data quality and participant engagement, the experiment includes an automatic termination script if the participant remains unresponsive for more than **3 minutes**.
+
+---
+
+## Installation & Usage
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/anoushzahedi/AATEC_fMRI.git
+   ```
+2. Open MATLAB and add the repository folder to your path.
+3. Ensure Psychtoolbox-3 is correctly configured (`SetupPsychtoolbox`).
+4. Run the main experimental script (ensure your input device is connected and recognized by MATLAB).
+
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
